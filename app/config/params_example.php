@@ -1,8 +1,11 @@
 <?php
 
-// Initialisation de la zone dynamique $title et $content
+// 1. Intitialiser les zones dynamiques: $title et $content
 $title = "";
 $content = "Aucun contenu ne correspond à votre requête.";
+
+// 2. Définir les constantes de connexion 
+//    DB_HOST, DB_NAME, DB_USER, DB_PASSWORD
 
 define("DB_HOST", "your_host");
 define("DB_NAME", "your_database");
