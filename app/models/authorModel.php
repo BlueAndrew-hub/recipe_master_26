@@ -1,24 +1,24 @@
-<?php
-namespace App\Models\RecipesModel;
+<?php 
+
+namespace App\Models\AuthorModel;
 
 use \PDO;
 
-function findOneByRand(PDO $conn): array 
-{
+function findOneByRand(PDO $conn) {
     $sql = "SELECT *
-            FROM recipes
+            FROM users
             ORDER BY RAND()
             LIMIT 1;";
 
     $rs = $conn->query($sql);
-    return $rs->fetch(PDO::FETCH_ASSOC);
+    return $rs->fetch(PDO::FETCH_ASSOC);   
 }
 
-function findAllPopulars(PDO $conn) {
+function findAllByAuthorId(PDO $conn) {
     $sql = "SELECT *
             FROM recipes
             ORDER BY created_at DESC
-            LIMIT 3;";
+            LIMIT 2;";
 
     $rs = $conn->query($sql);
     return $rs->fetchAll(PDO::FETCH_ASSOC);
